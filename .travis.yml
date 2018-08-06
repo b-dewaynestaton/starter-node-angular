@@ -1,4 +1,6 @@
 language: node_js
+before_install:
+  -npm i npm-test
 node_js:
   - "8"
 services: mongodb
@@ -8,6 +10,8 @@ cache:
 sudo: false
 install:
   - npm install
+script:
+  - npm test
 deploy:
   - provider: script
     skip_cleanup: true
